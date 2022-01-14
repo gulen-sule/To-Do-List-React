@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ToDoList from "../ToDoList";
 import './Add.css';
+import ToDoList from "../ToDo/ToDoList"
 
 function Form(){
 
