@@ -25,7 +25,12 @@ function Form(){
         {items.map((d,index)=>
         <div class="col-12">
             <div class="row row_list" key={index}>
-                <div  class="col-11">
+                <div class="col-1">
+                <form >
+                <input type="checkbox"  name="check" />
+                </form>
+                </div>
+                <div  class="col-10">
                     <ToDoList item={d} ></ToDoList>
                 </div>
                 <div class="col-1">
