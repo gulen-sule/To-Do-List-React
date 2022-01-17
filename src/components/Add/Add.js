@@ -20,22 +20,26 @@ function Form(){
     }
 
     return(
-        <div>
-    <form className="input" onSubmit={handleClick}>
-        <label>
-            <input type="text" name="to-do-input" />
-        </label>
-        <button type="Submit">Add</button>
-    </form>
+        <div class="container" >
 
-    <div>
+    <div class="container list-cont">
         {items.map((d,index)=>
-        <div className="list" key={index}>
+        <div className="list" class="row row_list" key={index}>
             <ToDoList item={d}></ToDoList>
-            <button id={index}  type="button" onClick={()=>removeItem(index)}>-</button>
+            <button  class="col-lg btn" id={index}  type="button" onClick={()=>removeItem(index)}>x</button>
         </div>
         )}
     </div>
+
+    <form class="container" className="input" onSubmit={handleClick}>
+    <div class="row">
+        <label class="col-lg" >
+            <input  type="text" name="to-do-input" />
+        </label>
+        <button class="col-lg btnS" type="Submit">Add</button>
+    </div>
+    </form>
+
     </div>
     );
 }
