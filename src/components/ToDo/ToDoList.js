@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 
 function ToDoList({item}){
 return(
-<div class="col-lg item"> {item}</div>
+<div id="item"> {item}</div>
 )
 }
 

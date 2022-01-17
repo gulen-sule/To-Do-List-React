@@ -1,23 +1,24 @@
-.title {
-  display: flex;
-justify-self: center;
+#title {
+display: flex;
 justify-content: center;
-width: max-content;
+align-items: center;
+font-family: 'Gill Sans';
 padding-left: 40px;
 padding-right: 40px;
 margin-top: 4px;
 box-sizing: border-box;
 border-bottom: salmon solid;
 border-width: 2px;
-
 }
 
-.as{
-  display: grid;
-  justify-content: center;
-}
 .cont{
   border: solid salmon;
   width:8px;
   
+}
+.whole{
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

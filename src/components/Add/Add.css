@@ -1,34 +1,45 @@
-.col-lg {
-    font-size: 20px;
-    font-family: fantasy;
-    margin: 10px;
- 
+  .btn_remove{
+    width: 38px;
+    background-color: lightcoral;
+    text-align: center;
+    border-radius: 90pt;
   }
-  .btn{
-    size-adjust: 1px;
-    width: 12px;
+  .btn-add{
+    width: 80px;
+    text-align: center;
+    margin: 12px;
   }
   .row_list{
+    padding: 10px;
+    font-size: 22px;
+    font-family:  'Gill Sans MT';
     margin-top: 4px;
-    height: min-content;
-    display: inline-block; 
     word-break: break-word; 
-    table-layout:fixed; 
-    padding-left: 8px;
-    padding-right: 8px;
     background-color: rgb(218, 218, 218);
     border-radius: 10pt;
     border: solid rgb(156, 140, 138) 2px;
   }
+  .input{
+   width: auto;
+   justify-content: center;
+   justify-self: center;
+   margin: 12px;
 
-  .input {
-    display: flex;
-    justify-content: center;
-    justify-self: center;
   }
-  .list {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-    font-size: 22px;
+  #input-text{
+    width: 200px;
   }
+  #add{
+    justify-content: center;
+  }
+  #page{
+    justify-items: center;
+    
+  }
+  #to-do-input{
+width:inherit;
+
+  }
+
+  
+ 
