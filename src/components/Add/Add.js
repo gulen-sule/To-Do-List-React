@@ -41,9 +41,9 @@ function Form(){
         <div className="row">
         <ul>
             {items.map((d,index)=>
-            <div className="col-12">
-                <li className="row row_list" key={index}>
-                    <div className="col-2">
+            <div className="col-12" key={index}>
+                <li className="row row_list">
+                    <div className="col-2" >
                         <input type="checkbox"  id="check1" />
                     </div>
                     <div  className="col-9">
