@@ -9,6 +9,11 @@
     text-align: center;
     margin: 12px;
   }
+  .btn-edit{
+    width: 40px;
+    text-align: center;
+    margin-right: 12px;
+  }
   .row_list{
     padding-right: 18px;
     padding-left: 12px;
@@ -36,10 +41,16 @@
   }
   #to-do-input{
   width:300px;
- margin-left: 28px;
- margin-top: 12px;
- margin-bottom: 16px;
+  margin-left: 28px;
+  margin-top: 12px;
+  margin-bottom: 16px;
   }
+  .input-box{
+  width:300px;
+  margin-left: 20px;
+  background-color: rgb(224, 224, 224);
+ 
+}
 
   
  
