@@ -17,6 +17,7 @@ function Form(){
                // removeItem(i)
                 console.log(i," silindi")
             }
+            setHasChosen(false)
         }
         else{
            event.preventDefault();
