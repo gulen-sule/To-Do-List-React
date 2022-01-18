@@ -23,6 +23,7 @@ function Form(){
            if(!chosenIndexes.includes(i))
             temp.push(items[i])
         }
+        setChosenIndexes([])
         setItems([...temp])
         setHasChosen(false)
     }
