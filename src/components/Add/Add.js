@@ -20,40 +20,43 @@ function Form(){
     }
 
     return(
-    <div class="col-12">
-    <div class="row" className="list-cont">
-        {items.map((d,index)=>
-        <div class="col-12">
-            <div class="row row_list" key={index}>
-                <div class="col-1">
-                <form >
-                <input type="checkbox"  name="check" />
-                </form>
-                </div>
-                <div  class="col-10">
-                    <ToDoList item={d} ></ToDoList>
-                </div>
-                <div class="col-1">
-                    <button className="btn_remove" id={index}  type="button" onClick={()=>removeItem(index)}>x</button>
+    <div className="container">
+        <div className="row">
+            <form  onSubmit={handleClick}>
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm-10">
+                    <label  className="input" >
+                        <input type="text" id="to-do-input" />
+                    </label>
+                    </div>
+                    <div  className="col-sm-2">
+                    <button className="btn-add" type="Submit">Add</button>
+                    </div>
                 </div>
             </div>
+            </form>
         </div>
-        )}
-    </div>
 
-    <form  onSubmit={handleClick}>
-    <div class="row" id="add">
-        <div class="col-9">
-        <label  className="input" >
-            <input type="text" name="to-do-input" id="to-do-input" />
-        </label>
+        <div className="row">
+        <ul>
+            {items.map((d,index)=>
+            <div className="col-12">
+                <li className="row row_list" key={index}>
+                    <div className="col-2">
+                        <input type="checkbox"  id="check1" />
+                    </div>
+                    <div  className="col-9">
+                        <ToDoList item={d} ></ToDoList>
+                    </div>
+                    <div className="col-1">
+                        <button className="btn_remove" id={index}  type="button" onClick={()=>removeItem(index)}>x</button>
+                    </div>
+                </li>
+            </div>
+            )}
+        </ul>
         </div>
-        <div  class="col-3">
-        <button className="btn-add" type="Submit">Add</button>
-        </div>
-    </div>
-    </form>
-    
     </div>
     );
 }
