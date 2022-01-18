@@ -3,19 +3,16 @@ import './Add.css';
 import ToDoList from "../ToDo/ToDoList"
 
 function Form(){
-
+    const [addedItem,setAddedItem]=useState("");
     const [items, setItems] = useState(["temizlik","ödev"]);
     const [editable, setEditable] = useState([false,false]);
     const [hasChosen,setHasChosen]=useState(false);
     const [chosenIndexes,setChosenIndexes]=useState([]);
    
 
-    const handleClick = (event) => {
-           event.preventDefault();
-        //window.alert(event.target[0].value)
-        if(event.target[0].value!=="")
-        setItems([...items,event.target[0].value])
-        event.target[0].value="" 
+    const handleClick = () => {
+        if(addedItem!=="")
+        setItems([...items,addedItem]) 
         }
       
     const deleteMultiple=()=>{
@@ -104,23 +101,22 @@ function Form(){
     return(
     <div className="container">
         <div className="row">
-            <form  onSubmit={handleClick} >
             <div className="container">
                 <div className="row">
                     <div className="col-sm-10">
                     <label  className="input" >
-                        <input type="text" id="to-do-input" className="input-box" />
+                        <input type="text" id="to-do-input" className="input-box"
+                         onChange={(e)=>setAddedItem(e.target.value)}/>
                     </label>
                     </div>
                     <div  className="col-sm-2">
                     {hasChosen ? 
-                    <button className="btn-add" type="Reset" onClick={deleteMultiple}>Delete</button>:
-                    <button className="btn-add" type="Submit">Add</button>}
+                    <button className="btn-add" type="button" onClick={deleteMultiple}>Delete</button>:
+                    <button className="btn-add"  onClick={(event)=>handleClick(event)}>Add</button>}
                     
                     </div>
                 </div>
             </div>
-            </form>
         </div>
 
         <div className="row">
