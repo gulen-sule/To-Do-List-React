@@ -4,38 +4,40 @@ import ToDoList from "../ToDo/ToDoList"
 
 function Form(){
 
-    const [items, setItem] = useState(["temizlik","ödev"]);
+    const [items, setItems] = useState(["temizlik","ödev"]);
     const [editable, setEditable] = useState([false,false]);
     const [hasChosen,setHasChosen]=useState(false);
     const [chosenIndexes,setChosenIndexes]=useState([]);
    
 
     const handleClick = (event) => {
-        if(hasChosen){
-            for (let i in hasChosen)
-            {
-               // removeItem(i)
-                console.log(i," silindi")
-            }
-            setHasChosen(false)
-        }
-        else{
            event.preventDefault();
         //window.alert(event.target[0].value)
         if(event.target[0].value!=="")
-        setItem([...items,event.target[0].value])
+        setItems([...items,event.target[0].value])
         event.target[0].value="" 
         }
-      }
+      
+    const deleteMultiple=()=>{
+        console.log(hasChosen)
+        const temp=[]
+        for (let i=0;i<items.length;i++)
+        {
+           if(!chosenIndexes.includes(i))
+            temp.push(items[i])
+        }
+        setItems([...temp])
+        setHasChosen(false)
+    }
 
     function editList(event,index){
         items[index]=event.target.value
         console.log("here")
-        setItem([...items])
+        setItems([...items])
     }
     function removeItem(index){
         items.splice(index,1)
-        setItem([...items])
+        setItems([...items])
     }
     function setOpp(index){
         editable[index]=!editable[index]
@@ -112,7 +114,7 @@ function Form(){
                     </div>
                     <div  className="col-sm-2">
                     {hasChosen ? 
-                    <button className="btn-add" type="Submit">Delete</button>:
+                    <button className="btn-add" type="Reset" onClick={deleteMultiple}>Delete</button>:
                     <button className="btn-add" type="Submit">Add</button>}
                     
                     </div>
